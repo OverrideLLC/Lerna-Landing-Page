@@ -1,0 +1,72 @@
+/* Estilos para la nueva sección "Futuro" */
+.future-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 1.5rem; /* Espaciado vertical y horizontal */
+  text-align: center;
+  color: white;
+  /* Fondo con gradiente radial similar al de la imagen de referencia */
+  background: linear-gradient(180deg, #a855f7e3 100%);
+  overflow: hidden;
+  padding-bottom: 500px; /* Espacio extra para círculos de fondo */
+}
+
+.future-content {
+  max-width: 48rem; /* Ancho máximo del contenido (768px) */
+  margin: 0 auto; /* Centrar el contenedor */
+}
+
+.future-title {
+  font-size: 3.75rem; /* Tamaño de la fuente (60px) */
+  font-weight: 800; /* Letra extra-bold */
+  line-height: 1.2;
+  margin-bottom: 1.5rem; /* Margen inferior */
+}
+
+.future-description {
+  font-size: 1.25rem; /* Tamaño de la fuente (20px) */
+  color: rgba(255, 255, 255, 0.9); /* Blanco con ligera transparencia */
+  margin-bottom: 2.5rem; /* Margen inferior */
+  max-width: 42rem; /* Ancho máximo del párrafo */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.future-cta-button {
+  background-color: white;
+  color: #a855f7e3; /* Color principal del gradiente */
+  font-weight: bold;
+  font-size: 1rem; /* Tamaño de la fuente (16px) */
+  padding: 0.75rem 2rem; /* Espaciado interno */
+  border: 2px solid white;
+  border-radius: 0.5rem; /* Bordes redondeados */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.future-cta-button:hover {
+  background-color: transparent; /* Fondo transparente al pasar el mouse */
+  color: white; /* Texto blanco */
+  transform: translateY(-3px); /* Efecto de elevación */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Adaptación para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .future-section {
+    padding: 6rem 1.5rem;
+    padding-bottom: 500px;
+    background: #a855f7e3;
+  }
+
+  .future-title {
+    font-size: 2.5rem; /* Tamaño de fuente más pequeño para móviles */
+  }
+
+  .future-description {
+    font-size: 1.125rem; /* Tamaño de fuente más pequeño para móviles */
+  }
+}

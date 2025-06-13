@@ -1,0 +1,326 @@
+/* Connectivity Section Styles */
+.connectivity-section {
+  position: relative;
+  padding: 5rem 0 8rem;
+  background: black;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%,rgba(0, 0, 0, 0.2) 20%, #a855f7e3 100%);
+  overflow: hidden;
+  padding-bottom: 500px; /* Extra space for background circles */
+}
+
+.connectivity-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header Styles */
+.connectivity-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.connectivity-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.connectivity-badge-text {
+  color: #a855f7;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.connectivity-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.connectivity-title-gradient {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.connectivity-description {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid Styles */
+.connectivity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.integration-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(71, 85, 105, 0.3);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: var(--delay, 0ms);
+}
+
+.integration-card:hover {
+  transform: translateY(-8px);
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(139, 92, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.integration-card-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.integration-icon-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.integration-icon-bg {
+  position: absolute;
+  inset: -0.5rem;
+  border-radius: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.integration-card:hover .integration-icon-bg {
+  opacity: 0.1;
+}
+
+.integration-icon {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.integration-card:hover .integration-icon {
+  transform: scale(1.1);
+}
+
+.integration-content {
+  flex: 1;
+}
+
+.integration-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.integration-description {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.integration-arrow {
+  color: #64748b;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.integration-card:hover .integration-arrow {
+  color: #a855f7;
+  transform: translateX(4px);
+}
+
+/* More integrations card */
+.connectivity-more {
+  display: flex;
+  justify-content: center;
+}
+
+.connectivity-more-card {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.connectivity-more-card:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(236, 72, 153, 0.55) 100%);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.connectivity-more-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 0.75rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.connectivity-more-card:hover .connectivity-more-icon {
+  background: rgba(139, 92, 246, 0.2);
+  transform: scale(1.1);
+}
+
+.connectivity-more-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.connectivity-more-text {
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+/* Background decorations */
+.connectivity-bg-decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.connectivity-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+  filter: blur(1px);
+}
+
+.connectivity-circle-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: -150px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.connectivity-circle-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 20%;
+  right: -100px;
+  animation: float 8s ease-in-out infinite reverse;
+  animation-delay: -2s;
+}
+
+.connectivity-circle-3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: float 8s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .connectivity-section {
+    padding: 3rem 0 5rem;
+  }
+  
+  .connectivity-container {
+    padding: 0 1rem;
+  }
+  
+  .connectivity-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .integration-card {
+    padding: 1rem;
+  }
+  
+  .integration-card-inner {
+    gap: 0.75rem;
+  }
+  
+  .integration-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .connectivity-more-card {
+    padding: 1.5rem;
+  }
+  
+  .connectivity-circle-1,
+  .connectivity-circle-2,
+  .connectivity-circle-3 {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .connectivity-title {
+    font-size: 2rem;
+  }
+  
+  .connectivity-description {
+    font-size: 1rem;
+  }
+  
+  .connectivity-grid {
+    grid-template-columns: 1fr;
+  }
+}

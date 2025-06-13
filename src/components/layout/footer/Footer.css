@@ -1,0 +1,156 @@
+/* FooterRedesigned.css */
+
+/* Contenedor que simula el fondo de la página para que la "tarjeta" resalte */
+.footer-background {
+  background-color: #a855f7e3; /* Fondo negro para un máximo contraste */
+  padding: 4rem 1rem; /* Espaciado para centrar la tarjeta del footer */
+  width: 100%;
+}
+
+.footer-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #111; /* Color de la tarjeta, un gris muy oscuro */
+  border-radius: 12px; /* Bordes redondeados para el efecto tarjeta */
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Sección Superior (Logo y Redes) --- */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-logo {
+  /* El componente Logo tiene su propio tamaño, se ajusta bien */
+  flex-shrink: 0;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-link {
+  color: #8E8E93; /* Gris suave para los iconos */
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.social-link:hover {
+  color: #FFFFFF;
+  transform: scale(1.1);
+}
+
+/* --- Columnas de Enlaces --- */
+.footer-columns {
+  display: grid;
+  /* 4 columnas en desktop, 2 en tablet y 1 en móvil */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.footer-column .column-title {
+  color: #FFFFFF;
+  font-size: 1rem; /* 16px */
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+
+.column-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* 12px */
+}
+
+.column-links a {
+  color: #8E8E93;
+  text-decoration: none;
+  font-size: 0.875rem; /* 14px */
+  transition: color 0.3s ease;
+}
+
+.column-links a:hover {
+  color: #FFFFFF;
+}
+
+/* --- Divisor --- */
+.footer-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 2.5rem 0;
+}
+
+/* --- Sección Inferior (Copyright) --- */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copyright,
+.footer-made-by p {
+  color: #8E8E93;
+  font-size: 0.875rem; /* 14px */
+  margin: 0;
+}
+
+.footer-made-by .heart {
+    color: #db01a5;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    display: inline-block;
+}
+
+.footer-made-by .brand {
+    color: #ffffff;
+    font-weight: 600;
+    background: linear-gradient(135deg, #9e06c4, #db01a5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 992px) {
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-card {
+    padding: 2rem 1.5rem;
+  }
+  .footer-columns {
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+    gap: 2rem;
+  }
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

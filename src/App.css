@@ -1,0 +1,39 @@
+/* App.css - Estilos Globales Corregidos y Reforzados */
+
+/*
+  CORRECCIÓN:
+  El problema es una regla de CSS que limita el ancho de toda la página.
+  Esta regla suele estar en App.css o index.css en el elemento #root.
+  El siguiente código fuerza a que la app ocupe el 100% del ancho.
+*/
+
+/* Reseteo para los contenedores principales de la aplicación */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  
+  /* Se anula explícitamente cualquier límite de ancho que pueda estar heredando */
+  max-width: none; 
+  
+  box-sizing: border-box;
+  
+  /* Previene el scroll horizontal no deseado */
+  overflow-x: hidden;
+}
+
+/* Estilos base para la aplicación */
+body {
+  /* Usamos una pila de fuentes de sistema para mejor compatibilidad */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #000000;
+  color: #d1d5db;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Asegura que todos los demás elementos se comporten correctamente con el tamaño de caja */
+*, *::before, *::after {
+  box-sizing: inherit;
+}

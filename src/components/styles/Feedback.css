@@ -1,0 +1,436 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: black;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Feedback Section Specific Styles */
+.feedback-section {
+    min-height: 100vh;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    /* --- CORRECCIÓN: Se añade isolation para crear un nuevo contexto de apilamiento --- */
+    /* Esto asegura que el pseudo-elemento con z-index: -1 se quede detrás del contenido de la sección, pero no detrás de la sección entera, haciéndolo visible. */
+    isolation: isolate;
+}
+
+/* --- INICIO DEL CÓDIGO PARA EFECTO AURORA --- */
+
+/* El seudo-elemento que crea el efecto de luz de fondo */
+.feedback-section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* z-index negativo para asegurarse de que esté detrás de todo el contenido DENTRO de este contexto de apilamiento */
+    z-index: -1;
+    
+    /* MODIFICADO: El valor de 'transparent' se aumentó de 40% a 60% para hacer cada fuente de luz más pequeña */
+    background-image: 
+        radial-gradient(circle at 30% 50%, rgba(168, 85, 247, 0.25), transparent 40%), /* Luz Púrpura */
+        radial-gradient(circle at 70% 50%, rgba(59, 130, 246, 0.25), transparent 40%); /* Luz Azul */
+
+    /* El fondo es mucho más grande que la pantalla para poder animar su posición */
+    background-size: 100% 100%;
+    background-position: 0% 0%;
+
+    /* MODIFICADO: El valor de 'blur' se redujo para hacer el efecto menos difuso y más pequeño */
+    filter: blur(70px);
+    
+    /* La animación que mueve la luz */
+    animation: aurora-effect 20s linear infinite alternate;
+}
+
+/* --- FIN DEL CÓDIGO DE AURORA --- */
+
+/* --- TODO TU CÓDIGO ORIGINAL SE CONSERVA DE AQUÍ EN ADELANTE --- */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff 0%, #a855f7 50%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px;
+    line-height: 1.1;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.content-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 1s ease-out 0.3s forwards;
+}
+
+.feedback-grid {
+    display: grid;
+    gap: 32px;
+}
+
+.feedback-category {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feedback-list {
+    list-style: none;
+    margin-top: 16px;
+}
+
+.feedback-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.feedback-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(8px);
+}
+
+.feedback-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(168, 85, 247, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+}
+
+.feedback-icon.evaluation {
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.feedback-icon.analysis {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.feedback-icon.feedback {
+    background: rgba(168, 85, 247, 0.1);
+}
+
+.feedback-icon.content {
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.feedback-icon.quiz {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.feedback-icon.materials {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.feedback-icon.schedule {
+    background: rgba(236, 72, 153, 0.1);
+}
+
+.feedback-icon.reports {
+    background: rgba(34, 211, 238, 0.1);
+}
+
+.feedback-icon.attendance {
+    background: rgba(167, 139, 250, 0.1);
+}
+
+.feedback-text {
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.content-right {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideInRight 1s ease-out 0.5s forwards;
+}
+
+.demo-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 40px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 100px rgba(168, 85, 247, 0.1);
+    transition: all 0.4s ease;
+}
+
+.demo-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5),
+                0 0 120px rgba(168, 85, 247, 0.2);
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+.demo-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(168, 85, 247, 0.15) 0%, 
+        rgba(59, 130, 246, 0.15) 50%,
+        rgba(16, 185, 129, 0.15) 100%);
+    border-radius: 24px;
+    z-index: -1;
+    animation: gradientShift 8s infinite alternate;
+}
+
+.demo-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 12px 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.demo-dots {
+    display: flex;
+    gap: 8px;
+    margin-right: 16px;
+    padding: 4px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dot:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 12px currentColor;
+}
+
+.dot.red { background: #ef4444; }
+.dot.yellow { background: #f59e0b; }
+.dot.green { background: #10b981; }
+
+.demo-title {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.metric-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(168, 85, 247, 0.1),
+        rgba(59, 130, 246, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(168, 85, 247, 0.3);
+    box-shadow: 0 8px 32px rgba(168, 85, 247, 0.15);
+}
+
+.metric-card:hover::before {
+    opacity: 1;
+}
+
+.metric-label {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.metric-change {
+    font-size: 0.85rem;
+    color: #10b981;
+}
+
+.progress-section {
+    margin-top: 32px;
+}
+
+.progress-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.progress-label {
+    color: #e2e8f0;
+    font-size: 0.9rem;
+}
+
+.progress-bar {
+    width: 120px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #a855f7, #3b82f6);
+    border-radius: 3px;
+    animation: progressAnimation 2s ease-out 1.5s forwards;
+    width: 0;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes progressAnimation {
+    to { width: var(--progress-width); }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .demo-container {
+        padding: 24px;
+    }
+}

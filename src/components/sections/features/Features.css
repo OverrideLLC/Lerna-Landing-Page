@@ -1,0 +1,168 @@
+/* Features.css */
+/* --- ESTILOS ORIGINALES (SE MANTIENEN INTACTOS) --- */
+.features-section {
+  min-height: 100vh;
+  background-color: #000000;
+  background-image: 
+    radial-gradient(circle at 15% 30%, rgba(219, 1, 165, 0.2), transparent 20%),
+    radial-gradient(circle at 50% 60%, rgba(158, 6, 196, 0.3), transparent 30%),
+    radial-gradient(circle at 85% 35%, rgba(158, 6, 196, 0.2), transparent 20%);
+  color: white;
+  padding: 120px 20px; /* Padding ajustado */
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Padding ajustado */
+  position: relative;
+  z-index: 2;
+}
+
+.features-header {
+  text-align: center;
+  margin-bottom: 60px; /* Espaciado reducido */
+  animation: fadeInUp 1s ease-out;
+}
+
+.features-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem); /* Tamaño ajustado */
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.features-subtitle {
+  font-size: 1.1rem; /* Tamaño ajustado */
+  color: #e2e8f0;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* --- ESTILOS NUEVOS PARA LA SECCIÓN INTERACTIVA --- */
+
+.interactive-tools-container {
+  margin-top: 40px;
+}
+
+.level-selectors, .subcategory-selectors {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.selector-btn {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a0a0a0;
+  padding: 10px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.selector-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.selector-btn.active {
+  background-color: #fff;
+  color: #000;
+  border-color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.tools-display {
+  text-align: center;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.tools-description {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+.tools-carousel {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+  margin: 0 -20px; /* Compensa el padding del container para que las cards lleguen a los bordes */
+  gap: 20px;
+  /* Oculta la barra de scroll pero permite el desplazamiento */
+  scrollbar-width: none; /* Firefox */
+}
+
+.tools-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.tool-card {
+  flex: 0 0 290px; /* No crece, no se encoge, base de 290px */
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px;
+  text-align: left;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(158, 6, 196, 0.4);
+}
+
+.tool-icon {
+  color: #9e06c4;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.tool-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.tool-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+}
+
+.tool-description-card {
+  font-size: 0.95rem;
+  color: #c0c0c0;
+  line-height: 1.6;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

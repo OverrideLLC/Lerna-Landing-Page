@@ -1,0 +1,54 @@
+/* CustomCursor.css - Estilos para el cursor personalizado */
+
+/* Primero, ocultamos el cursor por defecto en toda la página */
+@media (hover: hover) and (pointer: fine) {
+    * {
+        cursor: none !important;
+    }
+}
+
+/* En dispositivos móviles, restauramos el cursor normal */
+@media (hover: none) or (pointer: coarse) {
+    * {
+        cursor: auto !important;
+    }
+    .custom-cursor {
+        display: none !important;
+    }
+}
+
+/* Estilo base del cursor personalizado */
+.custom-cursor {
+    position: fixed;
+    /* Se posiciona el centro del div en el puntero, no la esquina superior izquierda */
+    transform: translate(-50%, -50%); 
+    pointer-events: none; /* Evita que el cursor interfiera con los clics */
+    z-index: 9999;
+    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, background-color 0.3s ease;
+    background-color: white;
+    mix-blend-mode: difference; /* Efecto de inversión de color muy elegante */
+}
+
+/* Estado por defecto: un pequeño círculo */
+.custom-cursor.default {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+/* Estado 'pointer': un anillo más grande para elementos clicables */
+.custom-cursor.pointer {
+    width: 40px;
+    height: 40px;
+    background-color: linear-gradient(135deg, #9e06c4, #db01a5); /* Semi-transparente */
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 50%;
+}
+
+/* Estado 'text': una barra vertical */
+.custom-cursor.text {
+    width: 2px;
+    height: 20px;
+    border-radius: 1px;
+}
+
